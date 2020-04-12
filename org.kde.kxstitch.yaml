@@ -44,6 +44,8 @@ modules:
       - type: archive
         url: https://download.kde.org/stable/kxstitch/2.2.0/kxstitch-2.2.0.tar.xz
         sha256: 4c230b47873b660f3232f74e536a1cb3e6f32bbd0ec436b36b1d9a8fd9a6cbe0
+      - type: patch
+        path: 404fdc7997f938148c2333a95864b63adb8065e8.patch
     cleanup:
       - /share/icons/hicolor/icon-theme.cache
 
