@@ -1,7 +1,7 @@
 id: org.kde.kxstitch
 
 runtime: org.kde.Platform
-runtime-version: '5.12'
+runtime-version: '5.14'
 sdk: org.kde.Sdk
 
 command: kxstitch
@@ -28,8 +28,8 @@ modules:
       - --without-utilities
     sources:
       - type: archive
-        url: https://github.com/ImageMagick/ImageMagick/archive/7.0.8-25.tar.gz
-        sha256: 2ccaa0f7616289c56ba7206db60e72d0680d69393b69db8ef4f43ae85431b1f1
+        url: https://github.com/ImageMagick/ImageMagick/archive/7.0.10-6.tar.gz
+        sha256: 37d36f4d736eb16e0dd43c50302e1d01d1bb1125165333df8273508a22f8a64d
     cleanup:
       - /bin
       - /include
@@ -42,14 +42,10 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
     sources:
       - type: archive
-        url: https://download.kde.org/stable/kxstitch/2.1.1/kxstitch-2.1.1.tar.xz
-        sha256: a194f366223f8eee7d93b2ace9c464c8ed968d5e928175bc4f49fbba9b4d8e15
+        url: https://download.kde.org/stable/kxstitch/2.2.0/kxstitch-2.2.0.tar.xz
+        sha256: 4c230b47873b660f3232f74e536a1cb3e6f32bbd0ec436b36b1d9a8fd9a6cbe0
       - type: patch
-        paths:
-          # Fix builds on newer Qt versions
-          - patch/fix-qt5.11-build.patch
-          # Fix color selector crash
-          - patch/floss-find.patch
+        path: 404fdc7997f938148c2333a95864b63adb8065e8.patch
     cleanup:
       - /share/icons/hicolor/icon-theme.cache
 
