@@ -24,8 +24,13 @@ modules:
       - --without-utilities
     sources:
       - type: archive
-        url: https://github.com/ImageMagick/ImageMagick/archive/7.0.10-6.tar.gz
-        sha256: 37d36f4d736eb16e0dd43c50302e1d01d1bb1125165333df8273508a22f8a64d
+        url: https://github.com/ImageMagick/ImageMagick/archive/7.1.1-21.tar.gz
+        sha256: 09402e5f17c6575ef9f010bb2e21ae1710f1f3426f115ad4317ee9129c32608e
+        x-checker-data:
+          type: anitya
+          project-id: 1372
+          stable-only: true
+          url-template: https://github.com/ImageMagick/ImageMagick/archive/$version.tar.gz
     cleanup:
       - /bin
       - /include
@@ -39,6 +44,11 @@ modules:
       - type: archive
         url: https://download.kde.org/stable/kxstitch/2.2.0/kxstitch-2.2.0.tar.xz
         sha256: 4c230b47873b660f3232f74e536a1cb3e6f32bbd0ec436b36b1d9a8fd9a6cbe0
+        x-checker-data:
+          type: anitya
+          project-id: 10579
+          stable-only: true
+          url-template: https://download.kde.org/stable/kxstitch/$version/kxstitch-$version.tar.xz
       - type: patch
         path: 404fdc7997f938148c2333a95864b63adb8065e8.patch
     cleanup:
