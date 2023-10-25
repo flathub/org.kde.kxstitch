@@ -1,12 +1,9 @@
 id: org.kde.kxstitch
-
 runtime: org.kde.Platform
-runtime-version: '5.15-22.08'
+runtime-version: '5.15-23.08'
 sdk: org.kde.Sdk
-
 command: kxstitch
 rename-icon: kxstitch
-
 finish-args:
   # X11 + XShm access
   - --socket=x11
@@ -19,7 +16,6 @@ finish-args:
   - --share=network
   # Audio
   - --socket=pulseaudio
-
 modules:
   - name: imagemagick
     config-opts:
@@ -35,7 +31,6 @@ modules:
       - /include
       - /lib/pkgconfig
       - '*.la'
-
   - name: kxstitch
     buildsystem: cmake-ninja
     config-opts:
@@ -48,4 +43,3 @@ modules:
         path: 404fdc7997f938148c2333a95864b63adb8065e8.patch
     cleanup:
       - /share/icons/hicolor/icon-theme.cache
-
