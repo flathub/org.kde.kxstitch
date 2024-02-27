@@ -53,3 +53,5 @@ modules:
         path: 404fdc7997f938148c2333a95864b63adb8065e8.patch
     cleanup:
       - /share/icons/hicolor/icon-theme.cache
+    post-install:
+      - appstream-util modify ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml project_license GPL-2.0-or-later
