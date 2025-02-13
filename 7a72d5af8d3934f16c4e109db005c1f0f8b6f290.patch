@@ -1,0 +1,28 @@
+From 7a72d5af8d3934f16c4e109db005c1f0f8b6f290 Mon Sep 17 00:00:00 2001
+From: "Friedrich W. H. Kossebau" <kossebau@kde.org>
+Date: Tue, 19 Mar 2024 16:26:46 +0100
+Subject: [PATCH] appdate: use desktop-application type, add developer tag
+
+---
+ org.kde.kxstitch.appdata.xml | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/org.kde.kxstitch.appdata.xml b/org.kde.kxstitch.appdata.xml
+index 73ee4060..61a397ac 100644
+--- a/org.kde.kxstitch.appdata.xml
++++ b/org.kde.kxstitch.appdata.xml
+@@ -1,7 +1,10 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<component type="desktop">
++<component type="desktop-application">
+   <!--Created with jdAppStreamEdit 8.0-->
+   <id>org.kde.kxstitch</id>
++  <developer id="org.kde">
++    <name translate="no">KDE</name>
++  </developer>
+   <name>KXStitch</name>
+   <name xml:lang="ca">KXStitch</name>
+   <name xml:lang="ca-valencia">KXStitch</name>
+-- 
+GitLab
+
