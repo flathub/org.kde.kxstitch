@@ -1,6 +1,6 @@
 id: org.kde.kxstitch
 runtime: org.kde.Platform
-runtime-version: 5.15-23.08
+runtime-version: 5.15-24.08
 sdk: org.kde.Sdk
 command: kxstitch
 rename-icon: kxstitch
@@ -24,8 +24,8 @@ modules:
       - --without-utilities
     sources:
       - type: archive
-        url: https://github.com/ImageMagick/ImageMagick/archive/7.1.1-47.tar.gz
-        sha256: 818e21a248986f15a6ba0221ab3ccbaed3d3abee4a6feb4609c6f2432a30d7ed
+        url: https://github.com/ImageMagick/ImageMagick/archive/7.1.2-11.tar.gz
+        sha256: 968047363963bf84917543acb77a869abc2f72e8d9a4e5f62380879c4fd925a4
         x-checker-data:
           type: anitya
           project-id: 1372
@@ -50,9 +50,6 @@ modules:
           stable-only: true
           url-template: https://download.kde.org/stable/kxstitch/$version/kxstitch-$version.tar.xz
       - type: patch
-        path: 404fdc7997f938148c2333a95864b63adb8065e8.patch
+        path: update-appdata.patch
     cleanup:
       - /share/icons/hicolor/icon-theme.cache
-    post-install:
-      - appstream-util modify ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml
-        project_license GPL-2.0-or-later
