@@ -50,7 +50,7 @@ modules:
           stable-only: true
           url-template: https://download.kde.org/stable/kxstitch/$version/kxstitch-$version.tar.xz
       - type: patch
-        path: 404fdc7997f938148c2333a95864b63adb8065e8.patch
+        path: update-appdata.patch
     cleanup:
       - /share/icons/hicolor/icon-theme.cache
     post-install:
