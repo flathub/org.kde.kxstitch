@@ -16,6 +16,12 @@ finish-args:
   - --share=network
   # Audio
   - --socket=pulseaudio
+cleanup:
+  - /share/doc
+  - /share/man
+  - '*.la'
+  - '*.a'
+
 modules:
   - name: imagemagick
     config-opts:
@@ -33,9 +39,12 @@ modules:
           url-template: https://github.com/ImageMagick/ImageMagick/archive/$version.tar.gz
     cleanup:
       - /bin
+      - /etc
       - /include
       - /lib/pkgconfig
-      - '*.la'
+      - /lib/ImageMagick-*
+      - /share/ImageMagick-*
+
   - name: kxstitch
     buildsystem: cmake-ninja
     config-opts:
