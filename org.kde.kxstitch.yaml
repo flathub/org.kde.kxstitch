@@ -1,6 +1,6 @@
 id: org.kde.kxstitch
 runtime: org.kde.Platform
-runtime-version: 5.15-24.08
+runtime-version: 5.15-25.08
 sdk: org.kde.Sdk
 command: kxstitch
 rename-icon: kxstitch
@@ -49,6 +49,7 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: archive
         url: https://download.kde.org/stable/kxstitch/2.2.0/kxstitch-2.2.0.tar.xz
