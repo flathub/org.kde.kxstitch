@@ -1,6 +1,6 @@
 id: org.kde.kxstitch
 runtime: org.kde.Platform
-runtime-version: 5.15-25.08
+runtime-version: '6.11'
 sdk: org.kde.Sdk
 command: kxstitch
 rename-icon: kxstitch
@@ -28,15 +28,6 @@ modules:
       - --disable-static
       - --disable-docs
       - --without-utilities
-    sources:
-      - type: archive
-        url: https://github.com/ImageMagick/ImageMagick/archive/7.1.2-12.tar.gz
-        sha256: 521fa7a8c0f664a3f5cf7437cbcc219f12bd6d5fe0c1fb014f212fa145076e60
-        x-checker-data:
-          type: anitya
-          project-id: 1372
-          stable-only: true
-          url-template: https://github.com/ImageMagick/ImageMagick/archive/$version.tar.gz
     cleanup:
       - /bin
       - /etc
@@ -44,23 +35,31 @@ modules:
       - /lib/pkgconfig
       - /lib/ImageMagick-*
       - /share/ImageMagick-*
+    sources:
+      - type: archive
+        url: https://github.com/ImageMagick/ImageMagick/archive/7.1.2-36.tar.gz
+        sha256: 5ba807e38a6bcb7c3c96a166485e270c5017aaa6b166f0440dc4b2badf6e6167
+        x-checker-data:
+          type: anitya
+          project-id: 1372
+          stable-only: true
+          url-template: https://github.com/ImageMagick/ImageMagick/archive/$version.tar.gz
 
   - name: kxstitch
     buildsystem: cmake-ninja
     config-opts:
-      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    cleanup:
+      - /share/icons/hicolor/icon-theme.cache
     sources:
       - type: archive
-        url: https://download.kde.org/stable/kxstitch/2.2.0/kxstitch-2.2.0.tar.xz
-        sha256: 4c230b47873b660f3232f74e536a1cb3e6f32bbd0ec436b36b1d9a8fd9a6cbe0
+        url: https://download.kde.org/stable/kxstitch/3.0.0/kxstitch-3.0.0.tar.xz
+        sha256: b8684c1971893ecc9e5ee3bc3e7ea45ba3f690f7c972897a50bd2c08bce7f28e
         x-checker-data:
           is-main-source: true
           type: anitya
           project-id: 10579
           stable-only: true
           url-template: https://download.kde.org/stable/kxstitch/$version/kxstitch-$version.tar.xz
-      - type: patch
-        path: update-appdata.patch
-    cleanup:
-      - /share/icons/hicolor/icon-theme.cache
+
